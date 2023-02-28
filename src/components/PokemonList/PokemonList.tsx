@@ -60,6 +60,28 @@ export default function PokemonList() {
         newPokemon.name = event.target.value;
       }
 
+     
+
+      function deleteNameP(event: React.FormEvent<HTMLFormElement>){
+        event.preventDefault();
+
+
+
+        //console.log(listOfPokemons);
+
+      //   listOfPokemons.map(poke => {
+      //     return <PokemonBox key={poke.name} {...poke} />
+      // })
+      for (let i = 0; i<listOfPokemons.length; i++ ){
+        if (newPokemon.name = listOfPokemons[i].name){
+          //const index = listOfPokemons[i].name.indexOf(newPokemon.name, 0);
+            //if (index > -1) {
+            listOfPokemons.splice(i, 1);
+            //}
+        }
+      }
+    }
+
     return  (
     <div>
         <h3>Add Pokemon via PokeAPI</h3>
@@ -68,6 +90,13 @@ export default function PokemonList() {
             <input type="text" onChange={setNameP}></input>
             <br/>
             <input type="submit"></input>
+        </form>
+        <h3>Delete Pokemon via PokeAPI</h3>
+        <form className="grid" onSubmit={deleteNameP}>
+            <label>Pokemon to Delete</label>
+            <input type="text" onChange={setNameP}></input>
+            <br/>
+            <input type="submit" value="Delete"></input>
         </form>
 
 

@@ -4,7 +4,7 @@ function Counter() {
     const [count, setCount] = useState(1);
 
     function increment(){
-        setCount( count + 1); 
+        setCount( count + 1);
     }
     return (<div>
         <p>{count}</p>
